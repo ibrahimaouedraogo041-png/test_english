@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boutique Démo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="entete">
+    <h1>Boutique Démo</h1>
+    <button id="btn-panier" class="btn-panier" aria-controls="panier">
+      Panier (<span id="compteur">0</span>)
+    </button>
+  </header>
+
+  <main>
+    <p class="intro">Site d'entraînement : aucun achat réel n'est possible.</p>
+    <section id="produits" class="grille" aria-label="Produits"></section>
+  </main>
+
+  <aside id="panier" class="panier" hidden>
+    <h2>Votre panier</h2>
+    <ul id="liste-panier"></ul>
+    <p class="total">Total : <strong id="total">0 FCFA</strong></p>
+    <button id="btn-vider" class="btn-secondaire">Vider le panier</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

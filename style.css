@@ -1,0 +1,87 @@
+:root {
+  --fond: #f2f4f0;
+  --encre: #1c2b27;
+  --vert: #1f5c4a;
+  --vert-clair: #dbe8e1;
+  --accent: #e0a526;
+  --carte: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--fond);
+  color: var(--encre);
+  line-height: 1.5;
+}
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--vert);
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+.entete h1 { margin: 0; font-size: 1.4rem; }
+
+.btn-panier, .btn-ajouter, .btn-secondaire {
+  font: inherit;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.btn-panier { background: var(--accent); color: var(--encre); font-weight: 600; }
+.btn-ajouter { background: var(--vert); color: #fff; width: 100%; }
+.btn-secondaire { background: var(--vert-clair); color: var(--encre); }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+main { padding: 1.5rem; max-width: 1000px; margin: 0 auto; }
+.intro { color: #4a5b55; }
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.carte {
+  background: var(--carte);
+  border: 1px solid #d3dbd5;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.carte .emoji { font-size: 3rem; text-align: center; }
+.carte h3 { margin: 0; font-size: 1.05rem; }
+.carte .prix { font-weight: 700; color: var(--vert); margin: 0 0 auto; }
+
+.panier {
+  position: fixed;
+  top: 0; right: 0;
+  width: min(360px, 100%);
+  height: 100%;
+  background: var(--carte);
+  border-left: 1px solid #d3dbd5;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+.panier[hidden] { display: none; }
+.panier ul { list-style: none; padding: 0; margin: 0; }
+.panier li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e4e9e5;
+}
+.panier li button { padding: 0.2rem 0.6rem; }
+.total { font-size: 1.1rem; }
